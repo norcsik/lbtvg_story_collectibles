@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse LEGO Batman: The Videogame collectible statistics by level.">
+  <title>Levels | LBTVG Story Collectibles</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Patua+One&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/page-scale.js" defer></script>
+  <script src="js/levels.js" defer></script>
+</head>
+<body>
+  <div class="page-frame">
+  <!-- Shared site navigation and collectible totals. -->
+  <header class="site-header">
+    <div class="brand-shape" aria-hidden="true">
+      <img src="assets/images/ui/nav-brand.svg" alt="">
+    </div>
+    <div class="brand">LBTVG - Story Collectibles</div>
+    <nav class="primary-nav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html"><span>Overview</span></a>
+      <a class="nav-link is-current" href="levels.html" aria-current="page"><span>Levels</span></a>
+    </nav>
+    <div class="header-counters" aria-label="Overall collectible totals">
+      <div class="header-counter">
+        <img src="assets/images/collectibles/minikit.png" alt="">
+        <span>238/300</span>
+      </div>
+      <div class="header-counter">
+        <img src="assets/images/collectibles/head.png" alt="">
+        <span>25/25</span>
+      </div>
+      <div class="header-counter">
+        <img src="assets/images/collectibles/brick.png" alt="">
+        <span>23/30</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="levels-page">
+    <!-- Selectable chapter map and its level markers. -->
+    <section class="map-panel" aria-label="Level map">
+      <img class="level-map-fallback" src="assets/images/map/hero_map.png" alt="Illustrated level map">
+      <video class="level-map-image is-unavailable" src="assets/images/map/hero_map.mp4" autoplay loop muted playsinline preload="auto" aria-hidden="true"></video>
+      <img class="map-static-burst" data-src="assets/images/map/static_burst.gif" alt="" aria-hidden="true" hidden>
+      <div class="chapter-selector" aria-label="Chapter selector">
+        <button class="chapter-arrow" type="button" data-chapter-step="-1" aria-label="Previous chapter">&lsaquo;</button>
+        <h1 id="chapter-title">The Riddler’s Revenge - Hero</h1>
+        <button class="chapter-arrow" type="button" data-chapter-step="1" aria-label="Next chapter">&rsaquo;</button>
+      </div>
+      <div class="level-markers" id="level-markers" aria-label="Choose a level"></div>
+    </section>
+
+    <!-- Selected level completion and collectible details. -->
+    <aside class="level-details" aria-labelledby="selected-level-title">
+      <h2 id="selected-level-title">You Can Bank On Batman</h2>
+      <p class="level-completion" id="level-completion">100%</p>
+      <div class="asset-crop minikit-feature">
+        <img src="assets/images/collectibles/minikit_empty.gif" alt="Minikit collectible">
+        <div class="minikit-solid-mask" aria-hidden="true">
+          <img src="assets/images/collectibles/minikit_solid.gif" alt="">
+        </div>
+      </div>
+      <p class="minikit-count" id="minikit-count">10/10</p>
+      <div class="minikit-grid" aria-label="Minikit status">
+        <img src="assets/images/collectibles/minikit_1.png" alt="">
+        <img src="assets/images/collectibles/minikit_1.png" alt="">
+        <img src="assets/images/collectibles/minikit_1.png" alt="">
+        <img src="assets/images/collectibles/minikit_1.png" alt="">
+        <img src="assets/images/collectibles/minikit_1.png" alt="">
+        <img src="assets/images/collectibles/minikit_1.png" alt="">
+        <img src="assets/images/collectibles/minikit_1.png" alt="">
+        <img src="assets/images/collectibles/minikit_1.png" alt="">
+        <img src="assets/images/collectibles/minikit_1.png" alt="">
+        <img src="assets/images/collectibles/minikit_1.png" alt="">
+      </div>
+      <div class="special-collectibles">
+        <div class="hostage-collectible">
+          <div class="asset-crop hostage-feature">
+            <img class="collectible-state-image collectible-state-empty" src="assets/images/collectibles/head_empty.gif" alt="Hostage collectible">
+            <img class="collectible-state-image collectible-state-solid" src="assets/images/collectibles/head_solid.gif" alt="" aria-hidden="true">
+          </div>
+          <button class="collectible-popup-trigger" type="button" aria-label="Show hostage walkthrough" aria-haspopup="dialog" disabled>
+            <img class="collectible-type-icon" src="assets/images/collectibles/head_1.png" alt="">
+          </button>
+        </div>
+        <div class="brick-collectible">
+          <div class="asset-crop brick-feature">
+            <img class="collectible-state-image collectible-state-empty" src="assets/images/collectibles/brick_empty.gif" alt="Red brick collectible">
+            <img class="collectible-state-image collectible-state-solid" src="assets/images/collectibles/brick_solid.gif" alt="" aria-hidden="true">
+          </div>
+          <button class="collectible-popup-trigger" type="button" aria-label="Show brick walkthrough" aria-haspopup="dialog" disabled>
+            <img class="collectible-type-icon" src="assets/images/collectibles/brick_1.png" alt="">
+          </button>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <dialog class="video-popup" id="video-popup" aria-label="Collectible walkthrough">
+    <button class="video-popup-close" id="video-popup-close" type="button" aria-label="Close walkthrough">&times;</button>
+    <button class="video-popup-arrow video-popup-previous" id="video-popup-previous" type="button" aria-label="Previous collectible">&lsaquo;</button>
+    <div class="video-popup-player">
+      <iframe id="video-popup-youtube" title="Collectible walkthrough video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" hidden></iframe>
+      <video id="video-popup-video" aria-label="Collectible walkthrough video" controls playsinline preload="metadata" hidden></video>
+      <p class="video-popup-no-video" id="video-popup-no-video" hidden></p>
+    </div>
+    <button class="video-popup-arrow video-popup-next" id="video-popup-next" type="button" aria-label="Next collectible">&rsaquo;</button>
+    <p class="video-popup-description" id="video-popup-description"></p>
+    <div class="video-popup-icons" id="video-popup-icons" aria-label="Collectibles in this level"></div>
+  </dialog>
+  <ul class="status-legend" aria-label="Collectible status">
+    <li><img src="assets/images/ui/legend-missing.svg" alt=""><span>Uncollected</span></li>
+    <li><img src="assets/images/ui/legend-collected.svg" alt=""><span>Normally Collected</span></li>
+    <li><img src="assets/images/ui/legend-glitched.svg" alt=""><span>Glitched</span></li>
+    <li><span class="total-collected-indicator" aria-hidden="true"></span><span>Total Collected</span></li>
+  </ul>
+  </div>
+</body>
+</html>
